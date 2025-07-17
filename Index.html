@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirección por dispositivo</title>
+  <script>
+    function redirigirSegunDispositivo() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = "https://www.ambienteconsultores.com";
+      } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = "https://www.innovatechvr.com";
+      } else {
+        // Si no es Android ni iOS, puedes redirigir a una página general o mostrar un mensaje
+        console.log("Dispositivo no reconocido para redirección.");
+      }
+    }
+  </script>
+</head>
+<body onload="redirigirSegunDispositivo()">
+  <p>Redireccionando según tu dispositivo...</p>
+</body>
+</html>
